@@ -12,7 +12,7 @@
 
     function onDeviceReady() {
     }
-
+alert('listo');
     // Called when a photo is successfully retrieved
     //
     function onPhotoSuccess(imageData) {
@@ -24,9 +24,21 @@ myImage.src = "data:image/jpeg;base64," + imageData;
     }
 
    function capturePhoto() {
-navigator.camera.getPicture(onPhotoDataSuccess, onPhotoFail, { quality: 50, cameraDirection:0, destinationType:        destinationType.DATA_URL}); }
+navigator.camera.getPicture(onPhotoSuccess, onPhotoFail, { { quality : 75,
+  destinationType : Camera.DestinationType.DATA_URL,
+  sourceType : Camera.PictureSourceType.CAMERA,
+  allowEdit : true,
+  encodingType: Camera.EncodingType.JPEG,
+  targetWidth: 100,
+  targetHeight: 100,
+  popoverOptions: CameraPopoverOptions,
+  saveToPhotoAlbum: false };}
     }
- 
+
+function onSuccess(imageData) {var imagen = document.getElementById('myImage');
+    Image.src = "datos: image / jpeg; base64," + imageData;}
+
+function onFail(message) {alert (' falló porque: ' + mensaje);}
     function onPhotoFail(message) {
       alert('Failed because: ' + message);
     }
@@ -35,7 +47,7 @@ navigator.camera.getPicture(onPhotoDataSuccess, onPhotoFail, { quality: 50, came
   </head>
   <body>
     <button onclick="capturePhoto();">Capture Photo</button> <br>
-
-    <img style="display:none;width:60px;height:60px;" id="myImage" src="" />
+<button onclick="alert('alert');">alert</button> <br>
+    <img style=" width:60px;height:60px;" id="myImage" src="" />
   </body>
 </html>

@@ -22,9 +22,7 @@ myImage.style.display = 'block';
 
 myImage.src = "data:image/jpeg;base64," + imageData;
     }
-Camera.Direction = { BACK : 0, // Use the back-facing camera FRONT : 1
- // Use the front-facing camera 
- };
+
    function capturePhoto() {
 navigator.camera.getPicture(onPhotoDataSuccess, onPhotoFail, { quality: 50, cameraDirection:0, destinationType:        destinationType.DATA_URL}); }
     }

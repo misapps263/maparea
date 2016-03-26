@@ -24,7 +24,7 @@ myImage.src = "data:image/jpeg;base64," + imageData;
     }
 
    function capturePhoto() {
-navigator.camera.getPicture(onPhotoSuccess, onPhotoFail, { { quality : 75,
+navigator.camera.getPicture(onPhotoSuccess, onFail, {  quality : 75,
   destinationType : Camera.DestinationType.DATA_URL,
   sourceType : Camera.PictureSourceType.CAMERA,
   allowEdit : true,
@@ -32,16 +32,13 @@ navigator.camera.getPicture(onPhotoSuccess, onPhotoFail, { { quality : 75,
   targetWidth: 100,
   targetHeight: 100,
   popoverOptions: CameraPopoverOptions,
-  saveToPhotoAlbum: false };}
+  saveToPhotoAlbum: false ;}
     }
 
-function onSuccess(imageData) {var imagen = document.getElementById('myImage');
-    Image.src = "datos: image / jpeg; base64," + imageData;}
+ 
 
 function onFail(message) {alert (' falló porque: ' + mensaje);}
-    function onPhotoFail(message) {
-      alert('Failed because: ' + message);
-    }
+     
 
     </script>
   </head>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Take a Photo</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+
+    document.addEventListener("deviceready",onDeviceReady,false);
+
+
+    function onDeviceReady() {
+    }
+
+    // Called when a photo is successfully retrieved
+    //
+    function onPhotoSuccess(imageData) {
+var myImage = document.getElementById('myImage');
+
+myImage.style.display = 'block';
+
+myImage.src = "data:image/jpeg;base64," + imageData;
+    }
+Camera.Direction = { BACK : 0, // Use the back-facing camera FRONT : 1
+ // Use the front-facing camera 
+ };
+   function capturePhoto() {
+navigator.camera.getPicture(onPhotoDataSuccess, onPhotoFail, { quality: 50, cameraDirection:0, destinationType:        destinationType.DATA_URL}); }
+    }
+ 
+    function onPhotoFail(message) {
+      alert('Failed because: ' + message);
+    }
+
+    </script>
+  </head>
+  <body>
+    <button onclick="capturePhoto();">Capture Photo</button> <br>
+
+    <img style="display:none;width:60px;height:60px;" id="myImage" src="" />
+  </body>
+</html>
